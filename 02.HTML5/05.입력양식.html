@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>입력 양식</title>
+</head>
+<body style="margin-left: 40px; margin-top: 40px;">
+    <h3>입력 양식</h3>
+    <hr>
+    <form action="" method="post" enctype="multipart/form-data">
+    <!-- action은 데이터가 갈 목적지 -->
+    <!-- method는 Get 아니면 Post 사용, 설명은 하단 참조 -->
+    <!-- enctype가 있어야 파일이 업로드가 가능해짐 -->
+        <table border="3">
+        <tr>
+            <!-- name에서 정한 값은 서버에서 입력받을때 key값으로 사용 -->
+            <!-- id값은 여기서는 별로 안쓰고 자바스크립트에서 사용 -->
+            <td>텍스트</td>
+            <td><input type="text" name="a" id="a"></td>
+        </tr>
+        <tr>
+            <td>패스워드</td>
+            <td><input type="password" name="b" id="pwd"></td>
+                <!-- 타입에 password 입력하면 땡떙 처리 -->
+        </tr>
+        <tr>
+            <td>히든</td>
+            <td> <input type="hidden" name="id" value="ccc"></td>
+             <!-- Update 같은 작업이 필요할때 id 같이 변경되지 않고 중요한 PRIMARY KEY 등의 정보는 
+        hidden 처리, Connectionless상태로 이동하는데, 그럼에도 로그인이 가능한건 
+        쿠키를 사용하기 때문...슬쩍 따라옴. 
+        이런데에 쓰이는 것이라서 쿠키는 파라미터 이동엔 관여되지 않음.-->
+        </tr>
+        <tr>
+            <td>체크박스</td><!-- 셀렉트보단 체크박스가 좀더 많이 쓰임 -->
+            <td>
+                <input type="checkbox" name="c" id="id1" value="1">
+                <label for="id1">사과</label> 
+                <input type="checkbox" name="c" id="id2" value="2">
+                <label for="id2">포도</label>
+                <input type="checkbox" name="c" id="id3" value="3">
+                <label for="id3">참외</label>
+                <input type="checkbox" name="c" id="id4" value="4">
+                <label for="id4">수박</label>
+                <!-- label을 붙이나 안붙이나 보기에 달라지는건 없는데 
+                    가시성때문에 붙여주는 정도..? -->
+            </td>
+        </tr>
+        <tr>
+            <td>셀렉트</td>
+            <td>
+                <select name="d" id="">
+                    <option value="1">김밥</option>
+                    <option value="2">떡볶이</option>
+                    <option value="3">순대</option>
+                    <option value="4">어묵</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>멀티 셀렉트</td>
+            <td>
+                <select name="e" id="" multiple>
+                    <option value="1">김밥</option>
+                    <option value="2">떡볶이</option>
+                    <option value="3">순대</option>
+                    <option value="4">어묵</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>라디오</td>
+            <td>
+                <input type="radio" name="f" id="" value="male">남자</option>
+                <input type="radio" name="f" id="" value="female">여자</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Textarea</td>
+            <td>
+                <textarea name="g" id="" cols="40" rows="5"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td>파일</td>
+            <td><input type="file" name="" id=""></td>
+        </tr>
+        <tr>
+            <td>버튼</td>
+            <td><input type="button" value="버튼" onclick="alert('버튼을 클릭하였음')">
+            <button type="submit">제출</button>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center;">
+                <input type="submit" value="제출">
+                <input type="reset" value="입력값 취소">
+                <!-- submit 버튼을 누르면 입력된 값을 
+                action에서 정한 위치로, method에서 정한 방법으로 서버에게 전송한다. 
+                그런데 지금은 활용할 서버가 없어서 일단 공란 처리-->
+                <!-- 모든걸 초기화 한다던가 그런게 아니고 순수하게 말 그대로 칸에 입력한 값을
+               제출하지 않고 지워서 취소한다는 소리 -->
+            </td>
+        </tr>
+        <!-- 모든 데이터는 문자열로 이동하다보니 정수도 변환되서 이동함 -->
+        </table>
+    </form>
+    <script>
+        let pwd = document.getElementById('pwd');
+    </script>
+</body>
+</html>
+
+<!--Localhost: 8080 / login 
+    IP: 네트워크에서 컴퓨터까지 연결
+     Port: 컴퓨터 내에서 여러가지 어플리케이션 중에서 
+           내가 연결하고자 하는 어플리케이션을 연결해줌 -->
+<!-- 라우팅(routing)
+    / 초기화면
+    /user/login
+    /user/logout
+    /shopping/electric
+    /shopping/food
+-->
+<!-- HTTP
+4가지 방식..
+Get - 주소창으로 데이터를 보내는 것, 4KB 제한 -> 실습해보니 주소창에 들어감!
+    - 단점은 주소창에 보내다보니 보안에 취약함..아이디 비번 다 노출 ㅠㅠ
+
+post - 보낼 정보를 편지봉투 안에 넣어서 남이 못보게 전달하는 것, Get으로 못보내는 정보 보낼 수 있음
+
+구글 예시)https://www.google.com/search?
+q=get+post& -여기 get+post-
+biw=1096&bih=1025&sxsrf=ALiCzsa-JsMiRfyQ1qnRSAen_Eigs20BDA%3A1669185999931&ei=
+z8F9Y4m6OOax2roP27iJQA&ved=0ahUKEwjJ3du02sP7AhXmmFYBHVtcAggQ4dUDCA8&uact=5&
+oq=get+post& -여기도 get+post-
+gs_lcp=Cgxnd3Mtd2l6LXNlcnAQAzIECAAQQzIFCAAQgAQyBQgAEIAEMgUIABCABDIFCAAQgAQyBQgA
+EIAEMgUIABCABDIFCAAQgAQyBQgAEIAEMgUIABCABDoKCAAQRxDWBBCwA0oECEEYAEoECEYYAFBiWIc
+DYLAMaAFwAXgAgAGRAYgBkwOSAQMwLjOYAQCgAQHIAQrAAQE&sclient=gws-wiz-serp
+
+네이버 예시)https://search.naver.com/search.naver?
+where=nexearch&sm=top_hty
+&fbm=1&ie=utf8
+&query=get+post -여기 get+post-
+
+- 이 두개는 잘 안씀
+Put
+Delete
+
+-->

@@ -1,12 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html>     <!-- HTML5 의미, ht까지만 쳐도 자동완성으로 양식을 작성해줌 -->
+<html lang="en">    <!-- 웹페이지의 사용언어를 구글 검색엔진에 제공..en권장인데 ko 해도 됨 -->
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8">  <!-- UTF-8 또는 EUC-KR인데 우린 UTF-8 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 반응형 웹-->
     <title>Hello World</title>
+    <script><!-- /* 자바 스크립트 코드 */
+        function a(){
+            alert("경고창을 띄웁니다");
+        }
+    </script>
+    <script src="Hello.js"></script>
+    <style>
+        body{
+            margin-left: 50px; margin-top: 50px; 
+        }
+    </style>
+    <link rel="stylesheet" href="hello.js">
 </head>
-<body>
-    <h1>Hello World</h1>
+<body onload ="b()">
+    <h1 style="color: rgb(51, 207, 175); background-color: rgba(255, 255, 170, 0.762);">Hello World</h1>
+    <hr>
+    <p>하나의 문단입니다.</p>
+    <h3 title="header">H3 태그입니다.</h3>
+    <img src="../img/forest1.jpg" alt="숲속">
+    <img src="../img/길고양이.jpg" alt="길고양이 치즈냥이">
+    <!-- 주석입니다.(Alt+shift+A and Ctrl+/) -->
 </body>
 </html>

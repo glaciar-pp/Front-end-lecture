@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media tag</title>
+</head>
+<body style="margin-left: 40px; margin-top: 40px;">
+    <h3>미디어 태그</h3>
+    <hr>
+    <img src="../img/forest1.jpg" alt="숲속" width="300">
+    <img src="../img/forest2.jpg" alt="없는 이미지" width="300">
+    <img src="../img/길고양이.jpg" alt="길고양이" width="300">
+     <!-- alt는 이미지가 없을경우 나올 글자를 넣는것
+     width를 주면 height도 자동 설정되기 때문에 꼭 둘다 설정하지는 않아도 됨-->
+     <hr>
+    <audio src="../img/Kalimba.mp3" controls autoplay></audio>
+    <!-- autoplay는 말 그대로 페이지가 열리면 바로 재생하는 기능인데, 
+    구글 크롬 보안정책에 막혀 재생되지않았음, 사용불가.. -->
+    <audio src="../img/Kalimba.ogg" controls></audio>
+    <hr>
+    <video controls="controls" poster="https://picsum.photos/300"> </video>
+    <video src="../img/Wildlife.mp4" controls height="400"> </video>
+    <video src="../img/Wildlife.webm" controls height="400"> </video>
+   
+    <!--  <video controls="controls" poster="http://placehold.it/640x360">
+        <source  src="Wildlife.mp4" type="video/mp4">
+        <source  src="Wildlife.webm" type="video/webm"> 
+    PDF 교재 예시 해봤는데 제대로 안됨...-->
+</body>
+</html>

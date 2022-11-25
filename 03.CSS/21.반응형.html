@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 기본 양식에 메타태그가 있음 -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반응형 웹</title>
+    <style>
+        h1{ color: blue;}
+        body{ background-color: aquamarine;}
+
+        @media screen and (max-width: 960px) {  /* PAD */
+            h1 { color: green;}
+            body { background-color: yellowgreen;}
+        }
+        @media screen and (max-width: 768px) {  /* Smart-phone */
+            h1 { color: red;}
+            body { background-color: coral;}
+        }
+        @media print {                          /* Printer */   
+            h1 { color: black;}
+            body { background-color: beige;}    
+        } /* 설정 후 인쇄-배경 그래픽 사용하면 복사 미리보기에 색이 나타남 */
+    </style>
+</head>
+<body>
+    <h3>반응형 웹</h3>
+    <hr>
+        <p>Lorem+숫자 : 문구가 설정하는 숫자만큼 출력됨</p>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, adipisci.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos a voluptatum, labore quaerat temporibus reprehenderit doloremque dignissimos, animi fugiat itaque non porro facere sapiente culpa dolorum! Culpa vero sapiente deleniti deserunt soluta porro ex vel at veritatis repudiandae itaque earum totam provident, nulla similique eveniet exercitationem fugit esse quia eligendi reprehenderit sint. Eos modi, ipsam repellat perferendis quod, delectus quis maiores beatae similique veniam quos ipsum omnis animi dicta soluta reiciendis iure recusandae harum. Ullam amet ex ipsam reprehenderit, sed inventore quod nisi. Non, vel et obcaecati quasi blanditiis reprehenderit ab maxime repellat quas, in numquam illum, nihil eum reiciendis!</p>
+</body>
+</html>

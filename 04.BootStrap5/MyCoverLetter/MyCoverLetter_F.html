@@ -7,8 +7,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
+<style>
+  body{margin: 10px;  
+      padding-top: 60px;
+      background-color: rgb(247, 253, 231);}/* navBar 가림으로 p 추가 */
 
-<body style="margin: 20px">
+</style>
+<body>
 <!-- 대문용 div container-->
 <div class="container-fluid p-1 bg-success text-white text-left">
   <h1><b>Glaciar-pp's page</b></h1>
@@ -16,7 +21,7 @@
 </div>
 <hr>
 <!-- 네비게이션 구간 -->
-<nav class="navbar navbar-expand-lg bg-light sticky-top">
+<nav class="navbar navbar-expand-lg bg-light fixed-top">
   <div class="container-fluid">
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -29,6 +34,7 @@
           </ul>
         </li>
     </ul>
+    <!-- 네비게이션 내 폼 구간 -->
     <form class="d-flex">
       <input class="form-control me-2" type="text" placeholder="검색할 내용을 입력하세요">
       <button class="btn btn-success" type="button">Go</button>
@@ -37,6 +43,7 @@
 <!-- 내용 div container -->
 <div class="container mt-3 ">
   <div class="row"> <!-- 행(row) / 열(Column) -->
+    <!-- WHO am I?, 자기소개 공간 -->
     <h2><b>WHO am I?</b></h2>
     <div class="col-2"></div>
     <div class="col-8">
@@ -61,21 +68,97 @@
     </div>
     <div class="col-2"></div>
   </div>
+
   <hr>
-  <div style="text-align: center">
-    <img src="../MyCLimg/MyCoverLetter_Hobby_a1.jpg" class="rounded" alt="보석 십자수1" width="250" height="250">
-    <img src="../MyCLimg/MyCoverLetter_Hobby_a2.jpg" class="rounded" alt="보석 십자수2" width="250" height="250">
-    <img src="../MyCLimg/MyCoverLetter_Hobby_a3.jpg" class="rounded" alt="손바느질" width="250" height="250">
-    <p class="text-secondary">-최근에 했던 취미 결과물-</p>
-    <img src="../MyCLimg/MyCoverLetter_Hobby_p1.jpg" class="rounded" alt="개구리 사진" width="250" height="250">
-    <img src="../MyCLimg/MyCoverLetter_Hobby_p2.jpg" class="rounded" alt="딱따구리 사진" width="250" height="250">
-    <p class="text-secondary">-우연히 발견한 동물 사진 찍는 것도 취미-</p>
-  </div>
+
+  <!-- 손 취미 사진 모음 Carousel-->
+  <div class="container mt-5">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+    <!-- Carousel -->
+    <div id="Hobby" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#Hobby" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#Hobby" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#Hobby" data-bs-slide-to="2"></button>
+      </div>
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../MyCLimg/MyCoverLetter_Hobby_a1.jpg" alt="보석 십자수1" class="d-block" style="width:100%; height: 500px">
+            <div class="carousel-caption">
+              <h4 class><b>보석십자수 해바라기</b></h4>
+              <p>최근에 했던 취미 결과물</p>
+            </div>
+          </div>
+        <div class="carousel-item">
+          <img src="../MyCLimg/MyCoverLetter_Hobby_a2.jpg" alt="보석 십자수2" class="d-block" style="width:100%; height: 500px">
+          <div class="carousel-caption">
+            <h4><b>보석십자수 시드니 오페라하우스</b></h4>
+            <p>최근에 했던 취미 결과물</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="../MyCLimg/MyCoverLetter_Hobby_a3.jpg" alt="손바느질" class="d-block" style="width:100%; height: 500px">
+          <div class="carousel-caption">
+            <h4><b>손바느질 고양이</b></h4>
+            <p>최근에 했던 취미 결과물</p>
+          </div>  
+        </div>
+      </div>
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#Hobby" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#Hobby" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+      </div>
+      <!-- 사진 취미 사진 모음 Carousel-->
+      <!-- Carousel -->
+      <div id="Photo" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#Photo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#Photo" data-bs-slide-to="1"></button>
+      </div>
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../MyCLimg/MyCoverLetter_Hobby_p1.jpg" alt="수풀 속 개구리" class="d-block" style="width:100%; height: 500px">
+            <div class="carousel-caption">
+              <h4 class><b>수풀 속 개구리</b></h4>
+              <p>최근에 했던 취미 결과물</p>
+            </div>
+          </div>
+        <div class="carousel-item">
+          <img src="../MyCLimg/MyCoverLetter_Hobby_p2.jpg" alt="아파트 나무에 딱따구리" class="d-block" style="width:100%; height: 500px">
+          <div class="carousel-caption">
+            <h4><b>아파트 나무에 딱따구리</b></h4>
+            <p>최근에 했던 취미 결과물</p>
+          </div>
+        </div>
+      </div>
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#Photo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#Photo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+      </div>  
+    </div>
+  <div class="col-3"></div>
+</div>
 </div>
 <hr>
+
 <div class="container mt-3">
   <div class="row"> <!-- 열(row) / 행(Column) -->
     <div class="text">
+      <!-- Favorite place?, 좋아하는 여행지 소개 공간 -->
       <h2 id="p2"><b>Place</b></h2>
         <p class="text-bg-success" style="text-align: center;">좋아하는 여행지?</p>
         <p>일단 집에서 이것저것 하는걸 좋아하다보니 집을 제일 좋아하긴 하지만, 사람이 크게 붐비지 않는 자연경관지, 별을 볼 수 있는 맑은 지역을 선호한다.</p>
@@ -95,12 +178,14 @@
 <hr>
 <div class="container mt-3">
   <div class="row"> <!-- 열(row) / 행(Column) -->
+    <!-- Favorite food?, 좋아하는 음식 소개 공간 -->
     <h2 id="p3"><b>Food</b></h2>
     <div class="text" style="text-align:center;">
       <p class="text-bg-success" style="text-align: center;">좋아하는 음식?</p>
       <p>크게 가리는 것 없이 좋아하는 편이지만 갖가지 재료가 들어간 찌개나 전골 형태를 가장 선호한다. <br>
-        따듯하고 감칠맛이 도는 국물에 각각의 식감을 가진 재료와 밥을 함께 먹으면 든든한 기분이 든다.
-      </p>
+        따듯하고 감칠맛이 도는 국물에 각각의 식감을 가진 재료와 밥을 함께 먹으면 든든한 기분이 든다.</p>
+      <p>전공이 식품이고 고등학교~대학교 기간동안 꾸준히 배우고 요리를 해먹기도 하다보니 손에 익어서 <br>
+        직접 조리하는 것도 즐기는 편이다. 다만 데코레이션을 안배웠더니 예쁘게 놓는건 조금 힘들다...🤣</p>
       <img src="../MyCLimg/MyCoverLetter_Food_F1.jpg" class="rounded" alt="파김치" width="300" height="250">
       <img src="../MyCLimg/MyCoverLetter_Food_F2.jpg" class="rounded" alt="두부김치전" width="250" height="250">
       <p class="text-secondary">-최근 해먹은 요리 사진-</p>
@@ -109,9 +194,15 @@
         보기엔 정말 평범하지만 생각이상으로 고소하고 맛있어서 근래에 좋아하는 음식에 추가되었다.</p>
       <img src="../MyCLimg/MyCoverLetter_Food_F3.jpg" class="rounded" alt="콩탕" width="250" height="250">
       <p class="text-secondary">-당시 먹은 콩탕-</p>
+      <p>그 후 깔끔하면서 고소한 맛이 좋아 인터넷에 찾아보았는데, 아는 사람은 아는 메뉴였던 것 같다. <br>
+        언제 만들어보게될진 모르지만 레시피도 찾아보았다.</p>
+      <p>만개의 레시피에서 찾은 <a href=https://www.10000recipe.com/recipe/6688430>인터넷에 있는 콩탕 레시피1</a></p>
+      <p>티스토리에서 찾은 <a href=https://kitchen-lab.tistory.com/30>콩크림 스프, 파스타 레시피</a></p>
+      <p>알고보니 편스토랑에도 나왔었다는데, TV를 잘 안봐서 뒤늦게 알게되었다...😊</p>
     </div>
   </div>
 </div>
+<div class="container" style="height: 300px;"></div>  
 <hr>
 <footer id="main-footer">
   <a href="https://github.com/glaciar-pp">Created By glaciar-pp</a>

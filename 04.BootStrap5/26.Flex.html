@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Flex</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/1cebaa81d6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid p-3 bg-primary text-white text-center">
+        <h1>My Bootstrap Page</h1>
+        <p>Flex</p> 
+    </div>
+    <div class="container mt-5">
+        <h2 class="mt-3">Flex</h2>
+        <p>To create a flexbox container and transform direct children into flex items, use the d-flex class:</p>
+        <div class="d-flex p-3 bg-secondary text-white">  
+            <div class="p-2 bg-info">Flex item 1</div>
+            <div class="p-2 bg-warning">Flex item 2</div>
+            <div class="p-2 bg-primary">Flex item 3</div>
+            <!-- padding을 안주면 너무 여유가 없음 -->
+        </div>
+
+        <h2 class="mt-3">Inline Flex</h2>
+        <p>To create an inline flexbox container, use the d-inline-flex class:</p>
+        <div class="d-inline-flex p-3 bg-secondary text-white">  
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+
+        <h2 class="mt-3">Horizontal Direction</h2>
+        <p>Use .flex-row to make the flex items appear side by side (default)</p>
+        <p>Use .flex-row-reverse to right-align the direction:</p>
+        <div class="d-flex flex-row-reverse bg-secondary">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+
+        <h2 class="mt-3">Vertical Direction</h2>
+        <p>Use .flex-column to display the flex items vertically (on top of each other):</p>
+        <div class="d-flex flex-column mb-3">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+    
+        <h2 class="mt-3">Justify content</h2>
+        <p>Use the .justify-content-* classes to change the alignment of flex items. Choose from start (default), end, center, between or around:</p>
+        <div class="d-flex justify-content-start bg-secondary mb-3">
+            <div class="p-2 bg-info">Flex item 1</div>
+            <div class="p-2 bg-warning">Flex item 2</div>
+            <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <div class="d-flex justify-content-end bg-secondary mb-3">
+            <div class="p-2 bg-info">Flex item 1</div>
+            <div class="p-2 bg-warning">Flex item 2</div>
+            <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <div class="d-flex justify-content-center bg-secondary mb-3">
+            <div class="p-2 bg-info">Flex item 1</div>
+            <div class="p-2 bg-warning">Flex item 2</div>
+            <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <div class="d-flex justify-content-between bg-secondary mb-3">
+            <div class="p-2 bg-info">Flex item 1</div>
+            <div class="p-2 bg-warning">Flex item 2</div>
+            <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+        <div class="d-flex justify-content-around bg-secondary mb-3">
+            <div class="p-2 bg-info">Flex item 1</div>
+            <div class="p-2 bg-warning">Flex item 2</div>
+            <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+
+        <h2 class="mt-3">Fill / Equal Widths</h2>
+        <p>Use .flex-fill on flex items to force them into equal widths:</p>
+        <div class="d-flex mb-3">
+          <div class="p-2 flex-fill bg-info">Flex item 1</div>
+          <div class="p-2 flex-fill bg-warning">Flex item 2</div>
+          <div class="p-2 flex-fill bg-primary">Flex item 3</div>
+        </div>
+        <p>Example without .flex-fill:</p>
+        <div class="d-flex mb-3 bg-secondary">
+          <div class="p-2 bg-info">Flex item 1</div>
+          <div class="p-2 bg-warning">Flex item 2</div>
+          <div class="p-2 bg-primary">Flex item 3</div>
+        </div>
+
+        <h2 class="mt-3">Auto Margins</h2>
+        <!-- item 앞에 공간을 가짐, 2개면 둘이 나눠가지고..3개면 세항목이 나눠가짐 -->
+        <p>Easily add auto margins to flex items with .mr-auto (push items to the right), or by using .ml-auto (push items to the left):</p>
+        <div class="d-flex mb-3 bg-secondary">
+            <div class="p-2 ms-auto bg-info">Flex item 1</div>
+            <div class="p-2 ms-auto bg-warning">Flex item 2</div>
+            <div class="p-2 ms-auto bg-primary">Flex item 3</div>
+        </div>
+
+        <h2 class="mt-3">Responsive Flex</h2>
+        <p>To create a flexbox container, add the d-flex class. Use any of the d-*-flex classes to control WHEN the element should be a flex element on a specific screen width.</p>
+        <p>Resize the browser window to see the effect.</p>
+            <div class="d-flex bg-success">d-flex</div><!-- 이건 못줄였음.! -->
+            <span class="d-sm-flex bg-success">d-sm-flex</span>
+            <span class="d-md-flex bg-success">d-md-flex</span>
+            <span class="d-lg-flex bg-success">d-lg-flex</span>
+            <span class="d-xl-flex bg-success">d-xl-flex</span>
+            <span class="d-xxl-flex bg-success">d-xxl-flex</span>
+
+        <div class="row mt-5">
+            <h2>테이블에 d-flex 사용하는 경우</h2><!-- 내 마음대로 칸 비율 분배! -->
+            <div class="col-2"></div>
+            <div class="col-8">
+                <table class="table">
+                    <tr class="d-flex">
+                        <th class="col-1">ID</th>
+                        <th class="col-2">이름</th>
+                        <th class="col-4">email</th>
+                        <th class="col-3">전화번호</th>
+                        <th class="col-3">비고</th>
+                    </tr>
+                    <tr class="d-flex">
+                        <td class="col-1">101</td>
+                        <td class="col-2">홍길동</td>
+                        <td class="col-4">gdhong@multicampus.com</td>
+                        <td class="col-3">010-2456-6789</td>
+                        <td class="col-3">의적</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+            <div class="col-2"></div>
+        </div>
+        
+    <div class="container" style="height: 300px;"></div>  
+</body>
+</html>

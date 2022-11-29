@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>다양한 입력 폼</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/1cebaa81d6.js" crossorigin="anonymous"></script>
+   
+  </head>
+<body>
+    <div class="container-fluid p-3 bg-primary text-white text-center">
+        <h1>My Bootstrap Page</h1>
+        <p>다양한 입력 폼</p> 
+    </div>
+    
+    <div class="container mt-5">
+        <h2>Select Menu</h2><!-- 특성상 Form 내부에 있어야함 -->
+        <p>To style a select menu in Bootstrap 5, add the .form-select class to the select element:</p>
+        <form action="/action_page.php">
+            <label for="sel1" class="form-label">Select list (select one):</label>
+            <select class="form-select" id="sel1" name="sellist1"><!-- disabled 를 붙이면 비활성화 -->
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+            </select>
+            <br>
+
+            <label for="sel2" class="form-label">Mutiple select list (hold shift to select more than one):</label>
+            <select multiple class="form-select" id="sel2" name="sellist2">
+                <!-- multiple 여러개 선택 가능, name="sellist2" 니까 서버에서 list나 Array 기능을.. -->
+                <option value="0">사과</option>
+                <option value="1">배</option>
+                <option value="2" selected>귤</option><!-- selected 를 붙이면 일단 기본으로 선택되어 있음. 체크박스라면 checked -->
+                <option value="3">감</option>
+                <option value="4">밤</option>
+                <!-- value="?" 값을 지정하면 인덱스로 왔다갔다하니 수가 많아지고 할수록 부담이 덜해짐.
+                    그리고 숫자 입력했다고 그냥 숫자가 오가는게 아니고 정확히는 문자열 2로 왔다갔다함 -->
+            </select>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+
+        <hr>
+
+        <h2 class="mt-3">Checkboxes</h2>
+        <p>To style a checkbox, use a container element with a .form-check class, and add .form-check-label to labels, and .form-check-input to the input with type="checkbox".</p>
+        <p>The form below contains three checkboxes. The first option is checked by default, and the last option is disabled:</p>
+        <form action="/action_page.php">
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="check1" name="option1" value="something" checked>
+                <label class="form-check-label" for="check1">Option 1</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="check2" name="option2" value="something">
+                <label class="form-check-label" for="check2">Option 2</label>
+            </div>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" disabled>
+                <label class="form-check-label">Option 3</label>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+
+        <h2 class="mt-3">Radio buttons</h2>
+        <p>The form below contains three radio buttons. The first option is checked by default, and the last option is disabled:</p>
+        <form action="/action_page.php">
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio1" name="optradio" value="option1" checked>
+                <label class="form-check-label" for="radio1">Option 1</label>
+            </div>
+            <div class="form-check">
+                <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">
+                <label class="form-check-label" for="radio2">Option 2</label>
+            </div>
+          <!-- option으로서 사용할땐 value 맞춰주기 -->
+          <div class="form-check">
+            <input type="radio" class="form-check-input" disabled>
+            <label class="form-check-label">Option 3</label>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+
+    <h2 class="mt-3">Inline form-check</h2>
+    <form action="">
+        <div class="form-check form-check-inline"><!-- 가로 형태 check 박스 -->
+            <!-- 네모 형태 박스 -->
+            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" checked>
+                <label class="form-check-label" for="inlineCheckbox2">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" disabled>
+                <label class="form-check-label" for="inlineCheckbox3">3 (disabled)</label>
+            </div>
+            <br>
+          <!-- 동그란 형태 박스 -->
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+            <label class="form-check-label" for="inlineRadio1">1</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">2</label>
+        </div>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
+            <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
+          </div>                      
+    </form>
+
+        <h2 class="mt-5">Min and Max Range</h2>
+        <p>Use the min and/or max attribute to specify the minimum/maximum value of a range:</p>
+        <form action="/action_page.php">
+            <label for="customRange" class="form-label">Custom range</label>
+            <input type="range" class="form-range" id="customRange" name="points" min="0" max="8">
+            
+            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+        </form>
+
+      <h2 class="mt-5">File input</h2><!-- 파일 올리기 -->
+      <form action="/advanced/image" method="POST" enctype="multipart/form-data">
+            <div class="input-group">
+                <input type="file" class="form-control" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+            </div>
+        </form>
+    </div>
+    <div class="container" style="height: 300px"></div>
+</body>
+</html>
+
+<!-- form 
+  단일입력의 경우 String 타입이 들어옴
+  멀티입력의 경우 List<String>타입이 들어옴
+    
+  name
+  id :HTML 내에서 자바스크립트와 같은 기능에서 필요로 하는 값
+  value: 화면에서 사용하는게 아니고 서버로 들어가는 값-->

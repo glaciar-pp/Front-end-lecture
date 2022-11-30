@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홀수/짝수</title>
+    <script>
+        function evenOdd() {
+            const numTag = document.getElementById('num');
+            const numStr = numTag.value;        // string이라 숫자로 바꿔줘야함
+            const num = Number(numStr);         // Number(document.getElementById(`num`).value)
+            const resTag = document.getElementById('result');
+
+            if (num % 2 == 0) {
+                resTag.innerHTML = '<h4>은 짝수입니다.</h4>';
+            }
+            else {
+                resTag.innerHTML = '<h4>은 홀수입니다.</h4>';
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="num" placeholder="정수를 입력하세요.">
+    <button onclick="evenOdd()">확인</button>
+    <br>
+    <p id="result"></p>
+</body>
+</html>
+
+<!-- html에서는 자바스크립트를 부르는데 문제가 없기 때문에 편리하게 입력 가능
+    다만 input 받는게 자스는 조금..약 10줄 정도 코드가 필요해서 html에서 받는게 나을수도 있다고 함
+    아직 그렇게 코드를 쓸줄도 모르는 문제가 있음..
+     -->

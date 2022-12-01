@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+</head>
+<body>
+    <div id="show"></div>
+        결과는 5 입니다.
+        <script>
+               var count = 3;
+        const show = document.getElementById('show');
+        function disp(num) {
+            let img = document.createElement('img');
+            img.setAttribute('src', '../../img/metro'+num+'.svg');
+            img.setAttribute('width', '1200');
+            img.setAttribute('id', 'second');
+            img.setAttribute('class', 'm-5');
+            show.append(img);
+        }
+        function hide() {
+            let sec = document.getElementById('second');
+            show.removeChild(sec);
+        }
+        function countDown() {
+            disp(count--);
+            let interval = setInterval(() => {
+                hide();
+                if (count != 0) 
+                    disp(count--);
+            }, 1000);
+            setTimeout(() => {
+                clearInterval(interval);
+            }, 3000);
+        }
+        window.onload = countDown;
+    </script>
+</body>
+</html>
+
+<!-- callBack 함수 보여주실 겸 조 추첨 기능 보여주심.! -->

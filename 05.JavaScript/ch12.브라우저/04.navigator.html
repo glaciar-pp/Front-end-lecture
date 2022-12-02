@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator 객체</title>
+    <script>
+        if (navigator.userAgent.toLowerCase().indexOf('chrome') >= 0);
+        alert('chrome 브라우저를 사용하고 있습니다.');
+    </script>
+</head>
+<body>
+    <h3 id="info"></h3>
+    <script>
+        let attr = `appCodeName: ${navigator.appCodeName}<br>`;
+        attr += `appName: ${navigator.appName}<br>`;
+        attr += `appVersion: ${navigator.appVersion}<br>`;
+        attr += `platform: ${navigator.platform}<br>`;
+        attr += `userAgent: ${navigator.userAgent}<br>`;
+        document.getElementById('info').innerHTML = attr; 
+    </script> 
+</body>
+</html>

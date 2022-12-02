@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Location 객체</title>
+    <script>
+    let info = `href: ${location.href}\n`;
+    info += `hostname: ${location.hostname}\n`;
+    info += `port: ${location.port}\n`;
+    info += `pathname: ${location.pathname}\n`;
+
+    alert(info);
+
+    function delayedMove () {
+        setTimeout(() => location.href='https://www.hanbit.co.kr/academy/', 3000);
+    }
+    /*  한글이 주소에 기재되면 나타내기가 어려워 인코딩되서 주소로 나온다.!
+    주고에제대로 연결은 어렵고 톰캣(8080) 활용하게 되는날 해볼 수 있을듯함 */
+    </script>
+</head>
+<body style="margin: 50px;">
+    <button onclick="location.href='https://www.hanbit.co.kr/academy/'">사이트 이동</button>
+    <button onclick="delayedMove()">사이트 지연 이동</button>
+    <button onclick="history.forward()">앞으로</button>
+    <button onclick="history.back()">뒤로</button>
+</body>
+</html>

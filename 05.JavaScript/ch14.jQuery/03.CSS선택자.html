@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>CSS 선택자</title>
+        <script>
+            // # fruits .national ==> backgroundColor: yellow
+            // #food .foreign ==> color: red
+            // .foreign ==> backgroundColor: beige
+           /*  window.onload = function() {
+                let lis = document.querySelectorAll('#fruits .national');
+                for (let li of lis)
+                li.style.backgroundColor = 'yellow';
+
+                lis = document.querySelectorAll('#food .foreign');
+                for (let li of lis)
+                li.style.color = 'red';
+
+                lis = document.querySelectorAll('.foreign');
+                for (let li of lis)
+                li.style.backgroundColor = 'beige';
+            } */
+            //JQuery 는 여러개의 노드에 대한 변경을 한꺼번에 단일문장으로 처리가 가능하다
+            // = 생산성이 좋아진다! 위 주석처리한거랑 같은 내용인데 총 4줄이면 끝!
+                $(document).ready(function() {
+                    $('#fruits').find('.national').css('backgroundColor', 'yellow');
+                    $('#food .foreign').css('color', 'red'); 
+                    //.find 없어도 적용이 잘 된다. 지금 문장에서 제일 필요한 부분은 .css 라서...
+                    $('.foreign').css('backgroundColor', 'beige');
+                });
+        </script>
+</head>
+<body style="margin: 40px;">
+    <ul id="fruits"> 내가 좋아하는 과일
+        <li class="national">사과</li>
+        <li class="foreign">바나나</li>
+        <li class="national">감</li>
+        <li class="foreign">파인애플</li>
+        <li></li>
+    </ul>
+    <ul id="food"> 내가 좋아하는 과일
+        <li class="national">김치찌개</li>
+        <li class="foreign">파스타</li>
+        <li class="national">갈비찜</li>
+    </ul>
+</body>
+</html>

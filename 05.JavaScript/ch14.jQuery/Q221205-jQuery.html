@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="Q221205-jQuery.js"></script>
+    <title>연습문제</title>
+</head>
+<body style="margin: 40px;  height: 1500px;">
+    <h1>연습문제</h1>
+    <hr>
+    <h3>문제1) 2의 거듭제곱 배열</h3>
+        <p>정수 두 개를 입력 받아
+        (첫 번째 입력 값의 범위는 1~20, 두 번째 입력 값의 범위는 10~30이며 
+        첫 번째 입력 값은 두 번째 입력 값보다 4 이상 작아야 합니다). <br>
+        첫 번째 정수부터 두 번째 정수까지를 지수로 하는 2의 거듭제곱 배열을 
+        출력하는 프로그램을 만드세요.
+        </p>
+    <input type="number" id="num1" placeholder="1~20 사이의 정수"><br>
+    <input type="number" id="num2" placeholder="10~30 사이의 정수"><br>
+    <!-- number 타입은 입력창에서 숫자를 위아래로 이동해 고를 수 있는 버튼이 있다. -->
+    <button onclick="answer1()">제출</button>
+    <p id="result1"></p>
+
+    <h3>문제2) the 갯수 찾아보기</h3>
+    <p> 다음의 문자열에서 'the'의 개수를 출력하는 프로그램을 만드세요. <br>
+    단, 모든 문자가 소문자인 'the'만 찾으면 되며 'them', 'there', 
+    'their' 등은 포함하지 않아야 합니다.
+    </p>
+    <hr>
+    <p>지문)<br>
+        the grown-ups' response, this time, was to advise me to lay aside my drawings of boa constrictors, whether from the inside or the outside, and devote myself instead to geography, history, arithmetic, and grammar. 
+        That is why, at the, age of six, I gave up what might have been a magnificent career as a painter. 
+        I had been disheartened by the failure of my Drawing Number One and my Drawing Number Two. Grown-ups never understand anything by themselves, and it is tiresome for children to be always and forever explaining things to the.
+    </p>
+    <textarea id="text2" cols="100" rows="10"></textarea>
+    <button onclick="answer2()">제출</button><br>
+    <p id="noPunct"></p>
+    <p id="result2"></p>
+
+    <h3>문제3) 값 내림차순 만들기</h3>
+    <p>
+        입력으로 받은 다음의 가격을 내림차순으로 출력하는 프로그램을 만드세요. <br>
+        예시가격 : 51900;83000;158000;367500;250000;59200;128500;1304000
+    </p>
+    <input type="text" id="price" placeholder="가격을 ';'으로 분리해서 입력하세요.">
+    <button onclick="answer3()">제출</button><br>
+    <p id="result3"></p>
+
+    <h3>문제4) 제조사와 모델 분리</h3>
+    <p> 다음을 제조사와 모델의 배열로 분리해 보세요. <br>
+        ['buick skylark 320', 'plymouth satellite', 'amc rebel sst', 'ford torino'] 
+    </p>
+    <hr>
+    <input type="text" id="car" placeholder="자동차 제조사와 모델을 입력하세요.">
+    <button onclick="answer4_add()">추가</button>
+    <button onclick="answer4()">제출</button><br> 
+    <p id="input"></p>
+    <p id="manufacturer" style="color: blue;"></p>
+    <p id="model" style="color: blue;"></p>
+
+    
+    <h3>문제5) 디지털 시계 만들기</h3>
+    <p>디지털 시계를 이미지를 사용하여 만들어 보세요</p>
+    <hr>
+        <h2 id="date"></h2>
+        <hr>
+        <h2 id="time"></h2>
+        <hr class="mb-5">
+        <img id="t1" class="number" width="100">
+        <img id="t2" class="number" width="100">
+        <img src="../../img/digits/Colon.jpg" width="100">
+        <img id="t3" class="number" width="100">
+        <img id="t4" class="number" width="100">
+        <img src="../../img/digits/Colon.jpg" width="100">
+        <img id="t5" class="number" width="100">
+        <img id="t6" class="number" width="100"> 
+</body>
+</html>
+
+<!-- tag
+    - val (Node의 값을 읽는 Method)
+    - Text
+    - Style(css)
+    - Attribute
+ -->

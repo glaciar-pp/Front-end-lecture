@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>jQuery 객체</title>
+    <script>
+        /*  Javascript 방식
+            window.onload = function() {
+            document.querySelector('h1').innerHTML = 'Javascript가 생성';
+            document.querySelector('h1').style.color = 'red';
+        } */ 
+         $(document).ready(function() {      // jQuery에서는 화살표 함수 사용할 수 없음
+            $('h1').html('jQuery가 생성').css('color', 'blue');
+            //이러한 형태가 제이쿼리에 생산성이 좋아지는 상태
+
+
+        });
+    </script>
+</head>
+<body style="margin: 40px;">
+    <h1></h1>
+</body>
+</html>

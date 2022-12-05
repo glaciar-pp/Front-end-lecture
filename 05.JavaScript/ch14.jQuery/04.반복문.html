@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>jQuery반복문</title>
+    <script>
+        $(document).ready(function(){
+            // li 태그의 홀수번째 color: red. 짝수번째 backgroundColor: yellow
+            $('li').each(function(index, element) {
+                if( index % 2 == 0) 
+                    $(this).css('color', 'red');
+                else
+                    $(this).css('backgroundColor', 'yellow');
+            });
+            
+            // national 폰트 크기를 30px, 20px로 번갈아 설정
+            $('.national').each(function(index, element) {
+            if( index % 2 == 0) 
+                    $(this).css('fontSize', '30px');
+                else
+                    $(this).css('fontSize', '20px');
+            });
+        });
+    </script>
+</head>
+    <body style="margin: 40px;">
+        <ul id="fruits"> 내가 좋아하는 과일
+            <li class="national">사과</li>
+            <li class="foreign">바나나</li>
+            <li class="national">감</li>
+            <li class="foreign">파인애플</li>
+            <li></li>
+        </ul>
+        <ul id="food"> 내가 좋아하는 과일
+            <li class="national">김치찌개</li>
+            <li class="foreign">파스타</li>
+            <li class="national">갈비찜</li>
+        </ul>
+    </body>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>jQuery 이벤트</title>
+    <script>
+        $(document).ready(function() {
+            $('h1').on('click', function(e) {
+                alert($(this).text()); 
+                /* 여기서는 this 라고 하는 이유는 h1을 선택,..클릭한 뒤 따라오는 명령이기 때문에
+                 h1을 뜻하기에 this 하고 한다. */
+            });
+            $('h1')
+            .on('mouseover', function(e) {$(this).css('backgroundColor', 'yellow');})
+            .on('mouseout', function(e) {$(this).css('backgroundColor', 'white');});
+        });
+        
+    </script>
+</head>
+<body style="margin:40px;">
+    <h1>Header A</h1>
+    <h1>Header B</h1>   
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Timer-jQuery</title>
+</head>
+<body>
+    <h3 style="margin-top: 30px;">문제6) 타이머 만들기</h3>
+    <div id="show"></div>
+    <h1>결과는 5 입니다.</h1>
+    <script>          
+    /* 6번 문제, 타이머 */
+         var count = 3;
+        //const show = document.getElementById('show');
+        function disp(num) {
+            $('<img></img>')
+                .attr('src', '../../img/metro'+num+'.svg')
+                .attr('width', '1000')
+                .attr('id', 'second')
+                .css('margin', '40px')
+                .appendTo('#show');         // id=show 태그에 append
+            /* let img = document.createElement('img');
+            img.setAttribute('src', '../../img/metro'+num+'.svg');
+            img.setAttribute('width', '1200');
+            img.setAttribute('id', 'second');
+            img.setAttribute('class', 'm-5');
+            show.append(img); */
+        }
+
+        function hide() {
+            // let sec = document.getElementById('second');
+            // show.removeChile(sec);
+            $('#second').remove();
+        }
+        function countDown() {
+            disp(count--);
+            let interval = setInterval(() => {
+                hide();
+                if (count != 0) 
+                    disp(count--);
+            }, 1000);
+            setTimeout(() => {
+                clearInterval(interval);
+            }, 3000);
+        }
+        // window.onload = countDown;
+        $(document).ready(countDown);
+    </script>
+</body>
+</html>

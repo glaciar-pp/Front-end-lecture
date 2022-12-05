@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트</title>
+    <script>
+        function btn2click() {
+            alert('버튼2가 클릭되었음');
+        }
+        window.onload = function () {
+            const button3 = document.getElementById('button3');
+            button3.onclick = function() {
+                alert ('버튼 3이 클릭되었음.');
+            }
+            //마우스오버 / 마우스 아웃 이벤트에 대해서 h3텍스트 보이기 / 감추기
+            const button4 = document.getElementById('button4');
+            button4.addEventListener('click', () => alert('버튼4가 클릭되었음'));
+            button4.addEventListener('mouseover', () => {
+                const h3 = document.createElement('h3');
+                const textNode = document.createTextNode('마우스 오버 이벤트 발생');
+                h3.appendChild(textNode);
+                document.body.appendChild(h3);
+            });
+            button4.addEventListener('mouseout', () => {
+                const h3 = document.querySelector('h3');
+                document.body.removeChild(h3);
+            });
+
+            //마우스오버 / 마우스 아웃 이벤트에 대해서 img 보이기 / 감추기
+            const button5 = document.getElementById('button5');
+            button5.addEventListener('mouseover', () => {
+                const img = document.createElement('img');
+                img.src='../../img/forest1.jpg';
+                img.width = 480;
+                img.style.margin = '50px';
+                document.body.appendChild(img);
+            })
+            button5.addEventListener('mouseout', () => {
+                const img = document.querySelector('img');
+                document.body.removeChild(img);
+            });
+
+            // a 태그의 기본이벤트 처리를 제거
+            const button6 = document.getElementById('button6');
+            button6.addEventListener('click', () => {
+                alert('a 태그의 기본 이벤트 처리를 못하게 하였음.');
+                const a = document.querySelector('a');
+                a.onclick = function() {
+                    return false;
+                }
+
+            });
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <button onclick="alert('버튼 1이 클릭되었음.')">버튼 1</button><br>
+    <button onclick="btn2click()">버튼 2</button><br>
+    <button id="button3">버튼 3</button><br>
+    <button id="button4">버튼 4</button><br>
+    <button id="button5">버튼 5</button><br>
+    <button id="button6">버튼 6</button><br>
+    <a href="https://www.hanbit.co.kr/academy/"></a>
+</body>
+</html>
+
+<!-- function btn () {
+    if (confirm("링크에 있는 사이트로 이동하시겠습니까?") == true) { //확인
+        alert();
+    href= ;
+    } else {alert("cancel")
+    return false; //취소
+    }
+} -->

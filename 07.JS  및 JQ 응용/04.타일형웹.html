@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>타일형 웹</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        .box {background: black; margin: 5px;}
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function() {
+            //문서 객체 생성
+            for (let i = 0; i < 50; i++) {
+                $('<div></div>')
+                .addClass('box')
+                .css({
+                    width: 200,
+                    height: Math.floor(Math.random() * 200) + 50
+                }).appendTo('body');
+            }
+            //Marsonry 플러그인 적용
+            $('body').masonry({
+                columnWidth: 210
+            });            
+        });
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
+<!-- 스타일 설정에서 * 표시는 전체에 적용하겠다는 의미를 가진다. -->
+<!-- 플러그인이 적용되지 않아서 헤맸는데, 알고보니 CDN 순서가 쿼리보다 앞이어서 적용이 안되고 있었다.
+둘의 순서를 바꿔주니 해결되었다. -->

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Animation</title>
+    <script>
+        window.onload = function() {
+            let count = 0;
+            let image = document.getElementById('image');
+            let frames = [
+                '../img/human/0.png', '../img/human/1.png', '../img/human/2.png', '../img/human/3.png', 
+                '../img/human/4.png', '../img/human/5.png', '../img/human/6.png', '../img/human/7.png', 
+                '../img/human/8.png', '../img/human/9.png', '../img/human/10.png', '../img/human/11.png', 
+                '../img/human/12.png', '../img/human/13.png', '../img/human/14.png' 
+            ];
+
+            setInterval(() => {
+                image.src = frames[count++ % frames.length];    //예문엔 count++이 따로 나오는데 이렇게 적는게 줄도 줄이고 좋음
+            }, 1000/30);    // = 30 frame/sec
+        }
+    </script>
+</head>
+<body style="margin: 40px;">
+    <img id="image">
+</body>
+</html>
+<!-- 원래 초당 16번 장면이 바뀌면 움직이는걸로 인식했고, 
+    옛날 기준 프레임이 있었는데 그게 24~30 정도의 프레임이었다고 한다. -->

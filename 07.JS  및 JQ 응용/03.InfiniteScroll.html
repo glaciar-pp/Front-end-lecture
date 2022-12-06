@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <title>Infinite Scroll</title>
+    <script>
+        $(document).ready(function() {
+            const appendDocument = function() {
+                for (let i = 0; i < 50; i++)
+                $('<h1></h1>').text('Infinite Scroll').appendTo('body');
+            }
+            //초기화
+            appendDocument();
+
+            //이벤트 연결
+            $(window).scroll(function(e) {
+                let scrollHeight = $(window).scrollTop() + $(window).height();
+                let documentHeight = $(document).height();
+
+                if (scrollHeight == documentHeight)
+                    appendDocument();
+            })
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
+
+<!-- selenium 이라는 사이트가 관련 가상 브라우저 같은 곳에서 연습해볼 수도 있음
+    티켓팅같은 것도 치열한 곳의 경우 거의 대부분이 로봇..매크로 등을 이용해 선점하는 경우가 대부분
+    크롤링 같은 경우도 스크롤을 전부 끝내서 데이터가 전부 노출되면 그 때 떠오는 것.
+    관련해서 기능을 만들어볼수도 있다는 점!
+
+    그리고 지금 다운받은 기능도 있고 CDN 기능을 이용한 것도 있는데..실제 사용할땐 CDN으로 해결하기엔
+    한계가 있어 플러그인들을 다운받고 다루는 방향으로 가야함
+-->

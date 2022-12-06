@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <style>
+        .box {
+            width: 100px; height: 100px; background-color: red;
+            position: absolute; left: 10px; top: 10px;
+        }
+    </style>
+    <!-- script src 위치를 맞춰주어야 스타일이 적용되고 정상 작동하다보니 밑으로 내려줌 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.box').click(function(e){
+                $(this).animate({left: 1000, top: 500}, 1000, function() { //왼쪽에서 1000, 위에서 500을 1초(1000은 밀리초 기준)동안 움직이게 함
+                    $('p').text('이동완료');
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="box"></div>
+    <p></p>
+</body>
+</html>
